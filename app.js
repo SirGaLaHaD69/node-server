@@ -13,6 +13,9 @@ app.use(morgan('dev'))
 app.use('/uploads',express.static('uploads'))
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+app.get('/hello',(req,res)=>{
+    res.send("HELLO FROM AWS")
+})
 app.use('/products',productRouter);
 app.use('/orders',orderRouter);
 app.use('/users',userRouter);
